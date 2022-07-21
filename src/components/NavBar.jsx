@@ -8,11 +8,11 @@ function NavBar (){
         <nav className="App-nav">
             <Link to={'/'}><img  src= {logosmall} /></Link>
             <ul className="App-items">
-                <li className="link"><a>COLECCIÓN</a></li>
-                <li className="link"><a>STORE</a></li>
-                <li className="link"><a>BOUTIQUE</a></li>
-                <li className="link"><a>CONTACTO</a></li>
-                <CartWidget /> 
+                <Link to={'/Page'}><li className="link"><a>COLECCIÓN</a></li></Link> 
+                <Link to={'/Page'}><li className="link"><a>STORE</a></li></Link>
+                <Link to={'/Page'}><li className="link"><a>BOUTIQUE</a></li></Link>
+                <Link to={'/Page'}><li className="link"><a>CONTACTO</a></li></Link>
+                <CartWidget />
             </ul>
         </nav>
     )

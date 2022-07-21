@@ -1,12 +1,4 @@
-import "./ItemListContainer.css";
-import "./CartWidget";
-//import Database from "./DataBase.jsx";
-import {useEffect, useState} from "react";
-import ItemDetail from "./ItemDetail";
-import { useParams } from "react-router-dom";
-
-
-const Data = [{
+const data = [{
     id: 1,
     title: "NÚMERO UNO",
     price: 3800,
@@ -34,19 +26,3 @@ const Data = [{
     stock: 14,
     img: "https://cdn.shopify.com/s/files/1/0029/7048/4771/t/20/assets/numero-six-camel.pagecollection.slider.png?v=162517635940735425761610355902"
 }]
-
-const ItemDetailContainer = () => {
-    const [item, setItem] = useState({});
-    const params = useParams();
-    const promise = new Promise ((resolve, reject) => {
-        setTimeout(() => resolve(Data),2000);
-        });
-        useEffect(() => {
-            promise.then((response) => {
-                const foundItem = response.filter((item) => item.id == params.id);
-                setItem(foundItem[0]);
-            });
-            },[]);
-    return <ItemDetail item={item}/>
-}
-export default ItemDetailContainer

@@ -3,31 +3,32 @@ import "./CartWidget";
 import Database from "./DataBase.jsx";
 import {useEffect, useState} from "react";
 import ItemList from "./ItemList";
+import {useParams} from 'react-router-dom' 
 
-function promiseItems () {
 
-    return new Promise ((resolve, reject) => {
-        setTimeout(() => {
-            resolve({Database});
-            },2000);
+const ItemListContainer = () => {
+    const {name} = useParams()
+    const [items, setItems] = useState([]);
+    const promise = new Promise ((respuesta) => {
+        setTimeout(() => respuesta(Database),2000);
         });
+
+        useEffect(() => {
+            promise.then((respuesta) => {
+                const products = respuesta;
+                if (name) {
+                    setItems(products.filter((product) => product.category == name));
+                } else {
+                    setItems(products);
+                }
+             });
+            }, [name]);
         
-    };
-
-function ItemListContainer ({titulo}) {
-    
-      const [Item, setItem] = useState([]);
-
-         useEffect( () => {
-             promiseItems().then(respuesta =>{
-                 setItem(respuesta);
-             })
-         },[]);
-
-    return(
+        return(
              <div className="mt-5">
-                 <ItemList todosLosItems={Database}/> 
+                 <ItemList items={items}/> 
              </div>
-    )
-}
+    );
+};
+
 export default ItemListContainer
