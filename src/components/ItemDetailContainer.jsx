@@ -3,6 +3,7 @@ import "./CartWidget";
 import Database from "./DataBase.jsx";
 import {useEffect, useState} from "react";
 import ItemDetail from "./ItemDetail";
+import Item from "./Item";
 
 function getBag () {
 
@@ -11,23 +12,25 @@ function getBag () {
             resolve({Database});
             },2000);
         });
-        
     };
+const ItemDetailContainer = () => {
+    const item = {name: 'name'};
+    return <ItemDetail item={item}/>
+}
 
-function ItemDetailContainer () {
+/* function ItemDetailContainer () {
     
-      const [itemBag, setBag] = useState([]);
-
+      const [Bag, setBag] = useState([]);
          useEffect( () => {
             getBag().then(respuesta =>{
-                 setBag(respuesta[0]);
+                 setBag(respuesta[1]);
              })
          },[]);
 
     return(
          <div>
-            <ItemDetail Bag={itemBag}/> 
+            <ItemDetail itemBag={Item}/> 
          </div>
     )
-}
+} */
 export default ItemDetailContainer

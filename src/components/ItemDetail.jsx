@@ -1,19 +1,19 @@
 import React from "react";
 
-function ItemDetail ({Bag}) {
+function ItemDetail ({itemBag}) {
      return (
-         <div key={Bag.id} className="CardProduct">
-            <img className="imgCard" src={Bag.img} alt="" />
-             <div  className="cardInfo">
-                <h3  className="textTitle">{Bag.title}</h3>
-                <p className="textCategory">{Bag.category}</p>
-                <div>
-                    <h4>{Bag.price}</h4>
-                    
+        <>
+            <h4>{itemBag.price}</h4>
+            <div key={itemBag.id} className="CardProduct">
+                <img className="imgCard" src={itemBag.img} alt="" />
+                <div  className="cardInfo">
+                    <h3  className="textTitle">{itemBag.title}</h3>
+                    <p className="textCategory">{itemBag.category}</p>
+                    <p className="textDescription">{itemBag.description}</p>
                 </div>
+                    <h4>{itemBag.price}</h4>
             </div>
-         </div>
-         
+         </>
       )
   }
   export default ItemDetail; 

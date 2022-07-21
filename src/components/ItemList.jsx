@@ -3,14 +3,16 @@ import Item from "./Item";
 
 function ItemList( { todosLosItems }){
      return (
-        <>
-        {todosLosItems.map( esteItem => {
-            return (
-                <Item Bag={esteItem} key={esteItem.id}/>
-            )
-            }
-        )}
-         </>
+         <div className="container">
+            <div className="row">
+                {todosLosItems.map( esteItem => {
+                 return (
+                    <div className="col-sm mt-5"><Item Bag={esteItem} key={esteItem.id}/></div>
+                    )
+                }
+                )}
+            </div>
+         </div>
      )
  }
 

@@ -25,12 +25,9 @@ function ItemListContainer ({titulo}) {
          },[]);
 
     return(
-         <div>
-             <div>
-                 <h1>{titulo}</h1>
+             <div className="mt-5">
                  <ItemList todosLosItems={Database}/> 
              </div>
-         </div>
     )
 }
 export default ItemListContainer

@@ -1,15 +1,16 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 
 function Item ({Bag}) {
+    const {title, price, img,}= Bag;
      return (
-         <div key={Bag.id} className="CardProduct">
-            <img className="imgCard" src={Bag.img} alt="" />
-             <div  className="cardInfo">
-                <h3  className="textTitle">{Bag.title}</h3>
-                <p className="textCategory">{Bag.category}</p>
+         <div key={Bag.id} className="card" style={{width: "17rem"}}>
+            <img className="card-img-top" src={Bag.img} alt="" />
+             <div  className="card-body d-flex flex-column justify-content-center">
+                <h4  className="card-title">{Bag.title}</h4>
                 <div>
                     <h4>${Bag.price}</h4>
-                    <button>Ver Más</button>
+                    <Link to={"ItemDetail"}><button className="btn btn-primary">Ver Detalle del Producto</button></Link>
                 </div>
             </div>
          </div>
