@@ -1,4 +1,4 @@
-LÉAME. MD
+README.MD
 POLENE es una aplicación E-commerce que forma parte de los canales de venta de nuestra marca. Fue creada con la librería ReactJs como proyecto del curso de ReactJs que dicta Coderhouse.
 
 Contenido
