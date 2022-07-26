@@ -14,8 +14,8 @@ const ItemListContainer = () => {
         });
 
         useEffect(() => {
-            promise.then((respuesta) => {
-                const products = respuesta;
+            promise.then((resp) => {
+                const products = resp;
                 if (name) {
                     setItems(products.filter((product) => product.category == name));
                 } else {

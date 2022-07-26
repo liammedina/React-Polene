@@ -1,5 +1,4 @@
 import React from "react";
-import {Link} from 'react-router-dom';
 import img404 from '../Images/img404.jpg';
 
 function Page(){
