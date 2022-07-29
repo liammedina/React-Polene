@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
+import { CartContext } from "./contexts/CartContex";
 import carrito from '../Images/carrito.jpg';
 
-function Cart(){
+const Cart = () => {
+    const {cartItems} = useContext(CartContext);
     return (
         <div className="conteiner">
             <img className="img-fluid" src={carrito} alt="" />

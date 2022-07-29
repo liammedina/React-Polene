@@ -3,7 +3,7 @@ import "./NavBar.css"
 import CartWidget from "./CartWidget";
 import {Link} from 'react-router-dom';
 
-function NavBar (){
+function NavBar ({amountItems}){
     return(
         <nav className="App-nav">
             <Link to={'/'}><img  src= {logosmall} /></Link>
@@ -12,7 +12,7 @@ function NavBar (){
                 <Link to={'/Page'}><li className="link"><a>STORE</a></li></Link>
                 <Link to={'/Page'}><li className="link"><a>BOUTIQUE</a></li></Link>
                 <Link to={'/Page'}><li className="link"><a>CONTACTO</a></li></Link>
-                <CartWidget />
+                <CartWidget amountItems = {amountItems} />
             </ul>
         </nav>
     )

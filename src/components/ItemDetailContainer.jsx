@@ -6,7 +6,7 @@ import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import ItemCount from "./ItemCount";
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({setAmountItems}) => {
     const [item, setItem] = useState({});
     const params = useParams();
     const promise = new Promise ((resolve, reject) => {

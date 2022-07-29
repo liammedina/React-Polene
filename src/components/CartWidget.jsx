@@ -1,11 +1,15 @@
  import shoppingCart from "../Images/shoppingCart.png"
+ import { useContext } from "react"
+ import { CartContext } from "./contexts/CartContex"
 
- const CartWidget =() =>{
+ const CartWidget = () =>{
+    const cartItems = useContext(CartContext);
 
      return (
          <>
          <img src={shoppingCart} alt="" />
-         <p className='parrafo'>6</p>
+         <span className='parrafo'>{cartItems.howManyItems()>0 && cartItems.howManyItems()
+         }</span>
          </>
      )
  }
