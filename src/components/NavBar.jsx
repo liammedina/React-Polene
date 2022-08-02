@@ -8,10 +8,10 @@ function NavBar ({amountItems}){
         <nav className="App-nav">
             <Link to={'/'}><img  src= {logosmall} /></Link>
             <ul className="App-items">
-                <Link to={'/Page'}><li className="link"><a>COLECCIÓN</a></li></Link> 
-                <Link to={'/Page'}><li className="link"><a>STORE</a></li></Link>
-                <Link to={'/Page'}><li className="link"><a>BOUTIQUE</a></li></Link>
-                <Link to={'/Page'}><li className="link"><a>CONTACTO</a></li></Link>
+                <Link to={'/Page'}><li className="link">COLECCIÓN</li></Link> 
+                <Link to={'/Page'}><li className="link">STORE</li></Link>
+                <Link to={'/Page'}><li className="link">BOUTIQUE</li></Link>
+                <Link to={'/Page'}><li className="link">CONTACTO</li></Link>
                 <CartWidget amountItems = {amountItems} />
             </ul>
         </nav>

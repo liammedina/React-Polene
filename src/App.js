@@ -6,13 +6,13 @@ import {BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Page from './components/Page';
 import Cart from './components/Cart';
 import {useState} from "react";
-import CartProvider from './components/contexts/CartContex';
-import { CartContext } from './components/contexts/CartContex';
+import CartContext from './components/contexts/CartContext';
+
 
 function App() {
   return (
       <div className='Body'>
-        <CartContext>
+      <CartContext>
         <BrowserRouter>
           <NavBar />
           <hr/>
@@ -24,7 +24,7 @@ function App() {
             <Route path='/cart' element={<Cart/>}/>
           </Routes>
         </BrowserRouter>
-        </CartContext>
+        </CartContext> 
       </div>
 
   );

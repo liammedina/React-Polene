@@ -1,34 +1,37 @@
 import React, { useState, useContext } from "react";
-import {default as ItemCount} from "./ItemCount";
 import Swal from 'sweetalert2';
 import { Link } from "react-router-dom";
-import { CartContext } from "./contexts/CartContex";
+import CartContext from "./contexts/CartContext";
+import {GContext} from './contexts/CartContext'
+import ItemCount from "./ItemCount";
 
 
 
 const ItemDetail = (props) => {
     const cartItems = useContext(CartContext);
-    const [amount, setAmount] = useState(0);
-    //const { title, price, description, category, img, stock, id } = item;
+    const [amount, setAmount] = useState(true);
+    const {addItem} = useContext(GContext);
+
+
     function onAdd (amount) {
-        setAmount(amount);
+        addItem (item, amount);
         cartItems.addItem(props.item,amount)}
-        
+       
     return (
         <>
             { props.item !== "" && (
             <div className="card" style={{ width: "20rem" }}>
-                <img className="card-img-top" src={props.item.img} alt="Card image cap" />
+                <img className="card-img-top" src={props.Item.img} alt="Card image cap" />
                 <div className="card-body d-flex flex-column justify-content-center">
-                    <h5 className="card-title">{props.item.title}</h5>
-                    <p className="textDescription">{props.item.description}</p>
+                    <h5 className="card-title">{props.Item.title}</h5>
+                    <p className="textDescription">{props.Item.description}</p>
                 </div>
-                <h4>${props.item.price}</h4>
-                <div key={props.item.id} className="CardProduct">
+                <h4>${props.Item.price}</h4>
+                <div key={props.Item.id} className="CardProduct">
                     <div  className="cardInfo">
-                        <p className="textCategory">{props.item.category}</p>
+                        <p className="textCategory">{props.Item.category}</p>
                 </div>
-            <ItemCount stock={props.item.stock} initial={0} onAdd={onAdd}/>
+            <ItemCount stock={props.Item.stock} initial={0} onAdd={onAdd}/>
             </div>
             
             </div>
@@ -36,6 +39,6 @@ const ItemDetail = (props) => {
         </>
     );
 };
-     
+    
   
   export default ItemDetail; 
